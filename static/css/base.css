@@ -1,17 +1,17 @@
 :root {
     --primary-color: #000; /* Cor do header: Preto */
-    --primary-color-faded: #0fdc9e; /* Cor dos APPS:*/
+    --primary-color-faded: #707070; /* Cor dos APPS:*/
     --models-color: #000000; /* Cor dos Models: branco */
     --secondary-color: #2d2d2d; /* Cor do footer: branco */
-    --terciary-color: #0ed898;
-    --color-hover: #2fc77b; /* Cor do link ao passar mouse por cima: branco */
-    --delete-color: #1ab668f9; 
-    --delete-hover: #13cd86; /* Cor do link ao passar mouse por do item de exclusao: Vermelho */
+    --terciary-color: #949695;
+    --color-hover: #b7bab9; /* Cor do link ao passar mouse por cima: branco */
+    --delete-color: #939695f9; 
+    --delete-hover: #969797; /* Cor do link ao passar mouse por do item de exclusao: Vermelho */
     --color-back-models: #ffffffea;
     --color-module: #89878778;
     --change-color: #fff; 
-    --search-color: #0bf18d;
-    --sucess: #099644;
+    --search-color: #d4d6d5;
+    --sucess: #8b8c8b;
     }
     
     /* Seleção de texto */

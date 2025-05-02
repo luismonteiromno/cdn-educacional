@@ -12,3 +12,6 @@ class AlunoAdmin(admin.ModelAdmin):
     filter_horizontal = ['responsaveis']
     
     autocomplete_fields = ['usuario', 'turma']
+    
+    readonly_fields = ['matricula']
+    
