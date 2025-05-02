@@ -21,7 +21,7 @@ from django.contrib import admin
 from django.urls import include, path
 from .swagger import schema_view
 
-# from .routers import main_router
+from .routers import main_router
 
 from .settings import DEBUG
 
@@ -31,7 +31,7 @@ admin.site.index_title = 'CDN Educacional'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('api/', include(main_router.urls)),
+    path('api/', include(main_router.urls)),
     path(
         'swagger/',
         schema_view.with_ui('swagger', cache_timeout=0),

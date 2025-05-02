@@ -1,16 +1,15 @@
-/* Definição das variáveis de cores */
 :root {
     --primary-color: #000; /* Cor do header: Preto */
     --primary-color-faded: #0fdc9e; /* Cor dos APPS:*/
-    --models-color: #ffffff; /* Cor dos Models: branco */
-    --secondary-color: #fff; /* Cor do footer: branco */
+    --models-color: #000000; /* Cor dos Models: branco */
+    --secondary-color: #2d2d2d; /* Cor do footer: branco */
     --terciary-color: #0ed898;
-    --color-hover: #336b4f; /* Cor do link ao passar mouse por cima: branco */
+    --color-hover: #2fc77b; /* Cor do link ao passar mouse por cima: branco */
     --delete-color: #1ab668f9; 
     --delete-hover: #13cd86; /* Cor do link ao passar mouse por do item de exclusao: Vermelho */
-    --color-back-models: #0e0d0dea;
+    --color-back-models: #ffffffea;
     --color-module: #89878778;
-    --change-color: #000; 
+    --change-color: #fff; 
     --search-color: #0bf18d;
     --sucess: #099644;
     }

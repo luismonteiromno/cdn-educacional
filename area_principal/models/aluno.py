@@ -12,7 +12,9 @@ class Aluno(models.Model):
     matricula = models.CharField(
         'Matricula',
         max_length=20,
-        unique=True
+        unique=True,
+        blank=True,
+        null=True
     )
     
     data_nascimento = models.DateField(
@@ -34,6 +36,20 @@ class Aluno(models.Model):
         'area_principal.Responsavel',
         verbose_name='Responsáveis',
     )
+    
+    @property
+    def gerar_matricula(self):
+        import secrets
+        import pendulum
+        data = pendulum.today()
+        
+        matricula = f'{data.year}{data.month}{secrets.token_hex(4)}'
+        return matricula
+    
+    def save(self, *args, **kwargs):
+        if not self.matricula:
+            self.matricula = self.gerar_matricula
+        super().save(*args, **kwargs)
     
     def __str__(self) -> str:
         return self.usuario.get_full_name()

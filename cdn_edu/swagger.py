@@ -4,7 +4,7 @@ from drf_yasg import openapi
 
 schema_view = get_schema_view(
     openapi.Info(
-        title="Wallet API",
+        title="CDN Educacional API",
         default_version='v1',
         description="API do sistema",
         terms_of_service="https://www.google.com/policies/terms/",

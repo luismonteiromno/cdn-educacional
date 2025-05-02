@@ -7,7 +7,7 @@ from ..models import Aluno
 class AlunoAdmin(admin.ModelAdmin):
     list_display = ['id', 'usuario', 'matricula']
 
-    search_fields = ['usuario', 'matricula']
+    search_fields = ['usuario__first_name', 'usuario__last_name', 'matricula']
     
     filter_horizontal = ['responsaveis']
     
