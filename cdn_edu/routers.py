@@ -3,7 +3,9 @@ from rest_framework import routers
 from area_principal.viewsets import (
     AlunoViewSet,
     DisciplinaViewSet,
+    NotaViewSet,
     ProfessorViewSet,
+    ProvaViewSet,
     ResponsavelViewSet,
     TurmaViewSet,
     UsuarioViewSet
@@ -22,9 +24,19 @@ main_router.register(
     basename='disciplinas'
 )
 main_router.register(
+    'notas',
+    NotaViewSet,
+    basename='notas'
+)
+main_router.register(
     'professores',
     ProfessorViewSet,
     basename='professores'
+)
+main_router.register(
+    'provas',
+    ProvaViewSet,
+    basename='provas'
 )
 main_router.register(
     'responsavel',
