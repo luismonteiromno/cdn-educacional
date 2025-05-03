@@ -11,3 +11,5 @@ class ProfessorViewSet(ModelViewSet):
     serializer_class = ProfessorSerializer
     permission_classes = [IsAuthenticated]
     
+    filterset_fields = ['turmas', 'disciplinas']
+    
