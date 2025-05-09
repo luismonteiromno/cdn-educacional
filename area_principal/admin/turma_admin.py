@@ -13,5 +13,7 @@ class TurmaAdmin(admin.ModelAdmin):
     
     list_filter = ['turno']
     
+    autocomplete_fields = ['disciplinas']
+    
     inlines = [AlunoInline]
     

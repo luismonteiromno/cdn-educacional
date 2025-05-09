@@ -20,6 +20,12 @@ class Turma(models.Model):
         null=True
     )
     
+    disciplinas = models.ManyToManyField(
+        'area_principal.Disciplina',
+        verbose_name='Disciplinas da turma',
+        blank=True
+    )
+    
     def __str__(self) -> str:
         return self.nome
     
