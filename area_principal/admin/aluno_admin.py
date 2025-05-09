@@ -15,6 +15,7 @@ class AlunoAdmin(admin.ModelAdmin):
                     'matricula',
                     'data_nascimento',
                     'endereco',
+                    'aprovado',
                 ]
             }
         ],
