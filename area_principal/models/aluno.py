@@ -37,6 +37,12 @@ class Aluno(models.Model):
         verbose_name='Responsáveis',
     )
     
+    aprovado = models.BooleanField(
+        'Aprovado',
+        blank=True,
+        null=True
+    )
+    
     @property
     def gerar_matricula(self):
         import secrets
