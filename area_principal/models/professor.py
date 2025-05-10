@@ -19,7 +19,7 @@ class Professor(models.Model):
     )
     
     def __str__(self) -> str:
-        return self.usuario.get_full_name()
+        return self.usuario.username
     
     class Meta:
         verbose_name = 'Professor'

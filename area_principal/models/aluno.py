@@ -49,7 +49,7 @@ class Aluno(models.Model):
         import pendulum
         data = pendulum.today()
         
-        matricula = f'{data.year}{data.month}{secrets.token_hex(4)}'
+        matricula = f'{data.year}{data.month}{str(secrets.token_hex(3)).upper()}'
         return matricula
     
     def save(self, *args, **kwargs):
@@ -58,9 +58,10 @@ class Aluno(models.Model):
         super().save(*args, **kwargs)
     
     def __str__(self) -> str:
-        return self.usuario.get_full_name()
+        return self.usuario.username
     
     class Meta:
+        # app_label = 'area_aluno'
         verbose_name = 'Aluno'
         verbose_name_plural = 'Alunos'
         

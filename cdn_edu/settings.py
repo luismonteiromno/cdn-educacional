@@ -121,7 +121,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # apps
+    # apps'
+    'area_aluno',
     'area_principal',
     # libs
     'rest_framework',

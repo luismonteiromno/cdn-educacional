@@ -27,7 +27,7 @@ class Turma(models.Model):
     )
     
     def __str__(self) -> str:
-        return self.nome
+        return f'{self.nome} - {self.turno}'
     
     class Meta:
         verbose_name = 'Turma'
