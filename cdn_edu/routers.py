@@ -1,5 +1,7 @@
 from rest_framework import routers
 
+from area_aluno.viewsets import FrequenciaAlunoViewSet
+
 from area_principal.viewsets import (
     AlunoViewSet,
     DisciplinaViewSet,
@@ -22,6 +24,11 @@ main_router.register(
     'disciplinas',
     DisciplinaViewSet,
     basename='disciplinas'
+)
+main_router.register(
+    'frequencias-alunos',
+    FrequenciaAlunoViewSet,
+    basename='frequencias-alunos'
 )
 main_router.register(
     'notas',
