@@ -15,5 +15,5 @@ __all__ = [
     ProvaAdmin,
     ResponsavelAdmin,
     TurmaAdmin,
-    UsuarioAdmin
+    UsuarioAdmin,
 ]
