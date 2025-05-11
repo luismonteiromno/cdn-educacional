@@ -7,9 +7,9 @@ from ..models import FrequenciaAluno
 class FrequenciaAlunoAdmin(admin.ModelAdmin):
     list_display = ['id', 'turma', 'professor', 'data']
     
-    search_fields = ['aluno__usuario__first_name', 'turma__nome', 'professor__usuario__first_name']
+    search_fields = ['aluno__usuario__first_name', 'turma__nome', 'professor__usuario__first_name', 'professor__usuario__username']
     
-    list_filter = ['turma']
+    list_filter = ['turma__nome', 'professor__usuario__username']
     
     autocomplete_fields = ['alunos', 'turma', 'professor']
     

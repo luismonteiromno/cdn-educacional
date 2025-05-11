@@ -10,7 +10,7 @@ class ProvaAdmin(admin.ModelAdmin):
     
     search_fields = ['disciplina__nome', 'professor__usuario__first_name', 'turma__nome']
     
-    list_filter = ['disciplina', 'professor', 'turma']
+    list_filter = ['disciplina', 'turma__nome', 'bimestre']
     
     autocomplete_fields = ['disciplina', 'professor', 'turma']
     
