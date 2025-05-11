@@ -25,6 +25,12 @@ class FrequenciaAlunoViewSet(ModelViewSet):
         if usuario.tipo != 'Professor':
             return Response({'Error': 'Apenas professores podem lançar frequência'}, status=403)
         
+        if not turma:
+            return Response({'Error': 'A turma deve ser informada!'}, status=400)
+        
+        if not alunos:
+            return Response({'Error': 'O campo de alunos não pode ser vazio!'}, status=400)
+        
         frequencia = FrequenciaAluno.objects.create(
             turma_id=turma,
             professor=usuario.professor
