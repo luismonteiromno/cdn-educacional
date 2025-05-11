@@ -14,3 +14,5 @@ class ProvaAdmin(admin.ModelAdmin):
     
     autocomplete_fields = ['disciplina', 'professor', 'turma']
     
+    radio_fields = {'bimestre': admin.VERTICAL}
+    

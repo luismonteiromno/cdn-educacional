@@ -3,17 +3,11 @@ from rest_framework import serializers
 
 from ..models import Professor
 
-from .turma_serializer import TurmaSerializer
-from .disciplina_serializer import DisciplinaSerializer
-
 
 class ProfessorSerializer(serializers.ModelSerializer):
-    turmas = TurmaSerializer(many=True, read_only=True)
-    disciplinas = DisciplinaSerializer(many=True, read_only=True)
-    usuario = serializers.SerializerMethodField(read_only=True)
-    
-    def get_usuario(self, obj):
-        return obj.usuario.username
+    turmas = serializers.StringRelatedField(many=True, read_only=True)
+    disciplinas = serializers.StringRelatedField(many=True, read_only=True)
+    usuario = serializers.StringRelatedField(read_only=True)
     
     class Meta:
         model = Professor

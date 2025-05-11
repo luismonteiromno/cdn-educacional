@@ -23,6 +23,7 @@ class AlunoAdmin(admin.ModelAdmin):
             {
                 'fields': [
                     'turma',
+                    'porcentagem_frequencia',
                     'responsaveis',
                 ]
             }
@@ -35,5 +36,5 @@ class AlunoAdmin(admin.ModelAdmin):
     
     autocomplete_fields = ['usuario', 'turma']
     
-    readonly_fields = ['matricula']
+    readonly_fields = ['matricula', 'porcentagem_frequencia', 'aprovado']
     

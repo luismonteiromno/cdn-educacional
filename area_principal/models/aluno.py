@@ -1,4 +1,5 @@
 from django.db import models
+from area_aluno.models.frequencia_aluno import FrequenciaAluno
 
 
 class Aluno(models.Model):
@@ -44,6 +45,14 @@ class Aluno(models.Model):
     )
     
     @property
+    def porcentagem_frequencia(self):
+        frequencias = FrequenciaAluno.objects.all()
+        presente = frequencias.filter(alunos=self, turma=self.turma).count()
+        total = frequencias.filter(turma=self.turma).count()
+        
+        return f'{(presente / total) * 100}%'
+    
+    @property
     def gerar_matricula(self):
         import secrets
         import pendulum
@@ -55,6 +64,8 @@ class Aluno(models.Model):
     def save(self, *args, **kwargs):
         if not self.matricula:
             self.matricula = self.gerar_matricula
+        if int(self.porcentagem_frequencia) < 75:
+            self.aprovado = False
         super().save(*args, **kwargs)
     
     def __str__(self) -> str:

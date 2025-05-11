@@ -20,6 +20,21 @@ class Prova(models.Model):
         on_delete=models.PROTECT
     )
     
+    BIMESTRES = (
+        ('1° Bimestre', '1° Bimestre'),
+        ('2° Bimestre', '2° Bimestre'),
+        ('3° Bimestre', '3° Bimestre'),
+        ('4° Bimestre', '4° Bimestre')
+    )
+    
+    bimestre = models.CharField(
+        'Bimestre',
+        max_length=20,
+        choices=BIMESTRES,
+        blank=True,
+        null=True
+    )
+    
     data = models.DateField(
         'Data de aplicação'
     )
