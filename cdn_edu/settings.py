@@ -208,7 +208,16 @@ REST_FRAMEWORK = {
 
 USE_POSTGRES = config('USE_POSTGRES', default=False, cast=bool)
 if USE_POSTGRES:
-    DATABASES = {'default': env.db()}
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': config('DB_NAME', 'cdn-edu'),
+            'USER': config('DB_USER', 'postgres'),
+            'PASSWORD': config('DB_PASSWORD', 'Luis9090'),
+            'HOST': config('DB_HOST', 'localhost'),
+            'PORT': config('DB_PORT', '5433'),
+        }
+    }
 else:
     DATABASES = {
         'default': {

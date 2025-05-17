@@ -18,6 +18,19 @@ class Professor(models.Model):
         verbose_name='Turmas'
     )
     
+    salario = models.DecimalField(
+        'Salário',
+        max_digits=10,
+        decimal_places=2,
+        blank=True,
+        null=True
+    )
+    
+    concursado = models.BooleanField(
+        'Concursado',
+        default=False
+    )
+    
     def __str__(self) -> str:
         return self.usuario.username
     
