@@ -35,6 +35,7 @@ class ProfessorAdmin(admin.ModelAdmin):
     autocomplete_fields = ['usuario', 'disciplinas', 'turmas']
 
     list_filter = [
-        'disciplinas',
+        AutocompleteFilterFactory('Pesquisar por disciplina', 'disciplinas'),
+        AutocompleteFilterFactory('Pesquisar por disciplina', 'usuario'),
         AutocompleteFilterFactory('Pesquisar por turma', 'turmas'),
     ]
