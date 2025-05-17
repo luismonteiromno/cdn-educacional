@@ -7,6 +7,7 @@ from ..models import Aluno
 
 class AlunoSerializer(serializers.ModelSerializer):
     turma = TurmaSerializer(read_only=True)
+    porcentagem_frequencia = serializers.ReadOnlyField()
     
     class Meta:
         model = Aluno
