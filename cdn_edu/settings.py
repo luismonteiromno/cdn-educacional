@@ -211,11 +211,11 @@ if USE_POSTGRES:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': config('DB_NAME', 'cdn-edu'),
-            'USER': config('DB_USER', 'postgres'),
-            'PASSWORD': config('DB_PASSWORD', 'Luis9090'),
-            'HOST': config('DB_HOST', 'localhost'),
-            'PORT': config('DB_PORT', '5433'),
+            'NAME': config('DB_NAME'),
+            'USER': config('DB_USER'),
+            'PASSWORD': config('DB_PASSWORD'),
+            'HOST': config('DB_HOST'),
+            'PORT': config('DB_PORT'),
         }
     }
 else:
