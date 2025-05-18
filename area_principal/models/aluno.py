@@ -48,9 +48,10 @@ class Aluno(models.Model):
     def porcentagem_frequencia(self):
         frequencias = FrequenciaAluno.objects.all()
         presente = frequencias.filter(alunos=self, turma=self.turma).count()
+        faltas_justificadas = frequencias.filter(alunos_faltas_abonadas=self, turma=self.turma).count()
         total = frequencias.filter(turma=self.turma).count()
         
-        return f'{(presente / total) * 100}%'
+        return f'{((presente + faltas_justificadas) / total) * 100}%'
     
     @property
     def gerar_matricula(self):

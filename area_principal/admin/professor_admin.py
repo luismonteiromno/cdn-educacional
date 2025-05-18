@@ -7,17 +7,11 @@ from ..models import Professor
 @admin.register(Professor)
 class ProfessorAdmin(admin.ModelAdmin):
     list_display = ['id', 'usuario']
-    
+
     fieldsets = [
         [
             'Informações escolares',
-            {
-                'fields': [
-                    'usuario',
-                    'disciplinas',
-                    'turmas'
-                ]
-            }
+            {'fields': ['usuario', 'disciplinas', 'turmas']},
         ],
         [
             'Informações pessoais',
@@ -26,8 +20,8 @@ class ProfessorAdmin(admin.ModelAdmin):
                     'salario',
                     'concursado',
                 ]
-            }
-        ]
+            },
+        ],
     ]
 
     search_fields = ['usuario']

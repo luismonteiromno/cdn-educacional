@@ -15,5 +15,5 @@ __all__ = [
     ProvaSerializer,
     ResponsavelSerializer,
     TurmaSerializer,
-    UsuarioSerializer
+    UsuarioSerializer,
 ]

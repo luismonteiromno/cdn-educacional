@@ -20,6 +20,11 @@ class FrequenciaAlunoAdmin(admin.ModelAdmin):
         AutocompleteFilterFactory('Pesquisar por professor', 'professor'),
     ]
 
-    autocomplete_fields = ['alunos', 'turma', 'professor']
+    autocomplete_fields = [
+        'alunos',
+        'alunos_faltas_abonadas',
+        'turma',
+        'professor',
+    ]
 
     readonly_fields = ['data']

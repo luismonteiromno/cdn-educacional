@@ -15,5 +15,5 @@ __all__ = [
     ProvaViewSet,
     ResponsavelViewSet,
     TurmaViewSet,
-    UsuarioViewSet
+    UsuarioViewSet,
 ]

@@ -6,6 +6,13 @@ class FrequenciaAluno(models.Model):
         'area_principal.Aluno',
         verbose_name='Alunos',
     )
+    
+    alunos_faltas_abonadas = models.ManyToManyField(
+        'area_principal.Aluno',
+        verbose_name='Alunos que justificaram a falta',
+        related_name='alunos_faltas_abonadas',
+        blank=True
+    )
 
     turma = models.ForeignKey(
         'area_principal.Turma',
