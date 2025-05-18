@@ -20,6 +20,7 @@ class FrequenciaAlunoViewSet(ModelViewSet):
     def lancar_frequencia(self, request):
         usuario = request.user
         data = request.data
+        frequencia_id = data.get('frequencia_id', None)
         turma = data.get('turma')
         alunos = data.get('alunos', [])
         alunos_faltas_abonadas = data.get('faltas_abonadas', [])
@@ -40,8 +41,12 @@ class FrequenciaAlunoViewSet(ModelViewSet):
                 {'Error': 'O campo de alunos não pode ser vazio!'}, status=400
             )
 
-        frequencia = FrequenciaAluno.objects.create(
-            turma_id=turma, professor=usuario.professor
+        frequencia, _ = FrequenciaAluno.objects.get_or_create(
+            id=frequencia_id,
+            defaults={
+                'turma_id': turma,
+                'professor': usuario.professor
+            }
         )
         frequencia.alunos.add(*alunos)
         frequencia.alunos_faltas_abonadas.add(*alunos_faltas_abonadas)
