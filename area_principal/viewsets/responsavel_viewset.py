@@ -11,3 +11,10 @@ class ResponsavelViewSet(ModelViewSet):
     serializer_class = ResponsavelSerializer
     permission_classes = [IsAuthenticated]
     
+    filterset_fields = [
+        'responsavel',
+        'parentesco',
+        'cpf',
+        'telefone'
+    ]
+    
